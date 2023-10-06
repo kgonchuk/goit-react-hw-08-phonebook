@@ -1,7 +1,9 @@
+import React from 'react';
+
 export default function Home() {
   return (
     <div>
-      <p>Welcome to contact storage!</p>
+      <h1>Welcome to contact storage!</h1>
     </div>
   );
 }

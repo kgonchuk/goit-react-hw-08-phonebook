@@ -3,9 +3,8 @@ import { Notify } from 'notiflix';
 import css from './Form.module.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from '../redux/contact/selector';
-import { addContact } from '../redux/operations';
-
+import { selectContacts } from '../../redux/contact/selector';
+import { addContact } from '../../redux/operations';
 const Form = () => {
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
