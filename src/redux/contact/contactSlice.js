@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchContacts, addContact, deleteContact } from '../operations';
+import {
+  fetchContacts,
+  addContact,
+  deleteContact,
+  updateContact,
+} from '../operations';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -15,7 +20,28 @@ const contactSlice = createSlice({
     items: [],
     error: null,
     isLoading: false,
+    sortedAlphabetic: true,
+    recentlyAdded: true,
   },
+  reducers: {
+    sortByName(state) {
+      state.items = state.items.sort((firstContact, secondContact) =>
+        state.sortedAlphabetic
+          ? firstContact.name.localeCompare(secondContact.name)
+          : secondContact.name.localeCompare(firstContact.name)
+      );
+      state.sortedAlphabetic = !state.sortedAlphabetic;
+    },
+    sortByAdded(state) {
+      state.items = state.items.sort((firstContact, secondContact) =>
+        state.recentlyAdded
+          ? firstContact.id.localeCompare(secondContact.id)
+          : secondContact.id.localeCompare(firstContact.id)
+      );
+      state.recentlyAdded = !state.recentlyAdded;
+    },
+  },
+
   extraReducers: builder => {
     builder
       .addCase(fetchContacts.pending, handlePending)
@@ -38,10 +64,25 @@ const contactSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = state.items.filter(item => item.id !== action.payload.id);
+      })
+      .addCase(updateContact.pending, (state) => {
+        state.isLoading = true;
+        // state.shouldOpenModal = true;
+      })
+      .addCase(updateContact.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error=null
+        const index = state.items.findIndex(({ id }) => id === action.payload.id);
+      state.items.splice(index, 1, action.payload);
       });
   },
 });
 
-export const { fetchingInProgress, fetchingSuccess, fetchingError } =
-  contactSlice.actions;
+export const {
+  fetchingInProgress,
+  fetchingSuccess,
+  fetchingError,
+  sortByName,
+  sortByAdded,
+} = contactSlice.actions;
 export const contactsReducer = contactSlice.reducer;

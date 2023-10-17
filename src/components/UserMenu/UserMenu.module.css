@@ -1,0 +1,35 @@
+.userMenuContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.titleUser {
+  font-weight: 500;
+  font-size: 18px;
+  color: #003b46;
+}
+
+.buttonLogOut {
+  height: 30px;
+
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  font-weight: 300;
+
+  /* padding: 10px; */
+  cursor: pointer;
+  background: #07575b;
+  color: #fff;
+  transition: all 0.3s ease 0s;
+  /* box-shadow: rgba(255, 255, 255, 0.5) 2px 2px 2px 0px inset,
+    rgba(0, 0, 0, 0.1) 7px 7px 20px 0px, rgba(0, 0, 0, 0.1) 4px 4px 5px 0px; */
+}
+.buttonLogOut:hover,
+.buttonLogOut:focus {
+  background-color: #003b46;
+  color: #fff;
+  transform: scale(1.1);
+  transition: all 250ms;
+}

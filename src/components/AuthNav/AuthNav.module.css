@@ -1,0 +1,16 @@
+.authNavContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.link {
+  text-decoration: none;
+  color: #003b46;
+
+  font-weight: 500;
+  font-size: 18px;
+}
+

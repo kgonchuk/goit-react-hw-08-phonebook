@@ -1,10 +1,17 @@
-.contactList {
-  margin-top: 30px;
+.contactContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-  gap: 20px;
+  align-items: center;
+  min-width: 400px;
+  border-radius: 5px;
+  padding: 25px;
+  padding-bottom: 25px;
+  border-radius: 5px;
+  margin-bottom: 35px;
+  box-shadow: 1px 7px 14px 0px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  background-color: white;
 }
 
 .contactItem {
@@ -14,17 +21,14 @@
   align-items: center;
 }
 
-.contactListBtn {
+.deletetBtn {
   cursor: pointer;
   border-radius: 4px;
   padding: 5px 20px;
   border: none;
   font-weight: 600;
 }
-.contactListBtn:hover,
-.contactListBtn:focus {
-  background-color: rgb(255, 2, 2);
-  color: #fff;
-  transform: scale(1.1);
-  transition: all 250ms;
+.contactsTitle{
+  color: #07575b;
+  font-size: 24px;
 }

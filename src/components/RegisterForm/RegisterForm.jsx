@@ -1,10 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/authOperation';
+import css from './RegisterForm.module.css';
 
-export const RegisterForm = e => {
+export const RegisterForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = () => {
+  const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
     dispatch(
@@ -18,22 +19,39 @@ export const RegisterForm = e => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          User name
-          <input type="name" name="name" />
+    <div className={css.registerFormContainer}>
+      <form className={css.form} onSubmit={handleSubmit}>
+        <label className={css.formLabel}>
+          <input
+            className={css.formInput}
+            type="name"
+            name="name"
+            placeholder=" User name"
+      
+            autoComplete='off'
+          />
         </label>
-        <label>
-          {' '}
-          Email
-          <input type="text" name="email" />
+        <label className={css.formLabel}>
+          <input
+            className={css.formInput}
+            type="text"
+            name="email"
+            placeholder=" Email"
+            autoComplete='off'
+          />
         </label>
-        <label>
-          Password
-          <input type="password" name="password" />
+        <label className={css.formLabel}>
+          <input
+            className={css.formInput}
+            type="password"
+            name="password"
+            placeholder="Password"
+            autoComplete='off'
+          />
         </label>
-        <button type="submit">Register</button>
+        <button className={css.button} type="submit">
+          Register
+        </button>
       </form>
     </div>
   );

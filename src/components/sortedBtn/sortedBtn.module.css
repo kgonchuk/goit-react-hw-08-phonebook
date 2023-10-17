@@ -1,0 +1,23 @@
+.sortBtn {
+
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+  font-weight: 300;
+  margin: 10px 5px;
+  padding: 10px 30px;
+  cursor: pointer;
+  background-color: #66a5ad;
+  color: #fff;
+  transition: all 0.3s ease 0s;
+  box-shadow: rgba(255, 255, 255, 0.5) 2px 2px 2px 0px inset,
+    rgba(0, 0, 0, 0.1) 5px 5px 10px 10px, rgba(0, 0, 0, 0.1) 2px 2px 5px 0px;
+}
+.button:hover,
+.button:focus {
+  background-color: #07575b;
+  color: #fff;
+  transform: scale(1.1);
+  transition: all 250ms;
+}

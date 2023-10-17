@@ -1,0 +1,90 @@
+
+.modalForm{
+margin-top: 15px;
+display: flex;
+flex-direction: column;
+gap: 35px;
+
+}
+ 
+
+.label{
+    display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+  
+.modalInput{
+    padding: 5px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
+  outline: none;
+}
+  
+
+
+.modalSubmitBtn{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  max-width: 150px;
+  height: 30px;
+  background-image: linear-gradient(to top, #d8d9db 0%, #fff 80%, #fdfdfd 100%);
+  border-radius: 30px;
+  border: 1px solid #8f9092;
+  transition: all 0.2s ease;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #606060;
+  text-shadow: 0 1px #fff;
+
+}
+  
+.modalCloseBtn{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: block;
+  height: 30px;
+  width: 30px;
+  right: 10px;
+  z-index: 1;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.modalSubmitBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    padding: 10px  30px;
+    cursor: pointer;
+    margin: 10px auto;
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    font-family: Lato, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    transition: all 0.3s ease 0s;
+    box-shadow: rgba(255, 255, 255, 0.5) 2px 2px 2px 0px inset,
+    rgba(0, 0, 0, 0.1) 5px 5px 10px 10px, rgba(0, 0, 0, 0.1) 2px 2px 5px 0px;
+    outline: none;
+    position: relative;
+    background: #66a5ad;
+    border: none;
+    z-index: 1;
+} 
+.modalSubmitBtn:hover,
+.modalSubmitBtn:focus {
+  background-color: #07575b;
+  color: #fff;
+  transform: scale(1.1);
+  transition: all 250ms;
+}

@@ -8,18 +8,14 @@ import { addContact } from '../../redux/operations';
 const Form = () => {
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
-
   const [contactName, setName] = useState('');
   const [number, setNumber] = useState('');
-
   const nameInputId = nanoid();
   const numberInputId = nanoid();
-
   const handleSubmit = e => {
     e.preventDefault();
     if (contacts.some(({ name }) => name === contactName)) {
       Notify.failure(`${contactName} is already in your contacts`);
-
       return;
     }
     dispatch(
@@ -47,12 +43,13 @@ const Form = () => {
   };
   return (
     <form className={css.form} onSubmit={handleSubmit}>
+      <h2 className={css.formTittle}>Your Phonebook</h2>
       <label className={css.formLabel} htmlFor={nameInputId}>
-        Name
         <input
           className={css.formInput}
           type="text"
           name="name"
+          placeholder="Name"
           value={contactName}
           onChange={handleChange}
           id={nameInputId}
@@ -62,15 +59,15 @@ const Form = () => {
         />
       </label>
       <label className={css.formLabel} htmlFor={numberInputId}>
-        Number
         <input
           className={css.formInput}
           type="tel"
           name="number"
+          placeholder="+380"
           value={number}
           onChange={handleChange}
           id={numberInputId}
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />

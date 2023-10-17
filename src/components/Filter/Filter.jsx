@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import css from './Filter.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilter } from '../../redux/filter/selector';
@@ -13,9 +12,9 @@ const Filter = () => {
     dispatch(setFilter(e.target.value));
   };
   return (
-    <div className={css.contactLabel}>
-      <label>
-        Find contacts by name
+    <form className={css.form}>
+      <label className={css.formLabel}>
+        <h2 className={css.filterTittle}>Find contacts by name</h2>
         <input
           type="text"
           value={filter}
@@ -25,7 +24,7 @@ const Filter = () => {
           className={css.contactInput}
         />
       </label>
-    </div>
+    </form>
   );
 };
 export default Filter;
