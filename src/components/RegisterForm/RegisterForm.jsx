@@ -27,7 +27,8 @@ export const RegisterForm = () => {
             type="name"
             name="name"
             placeholder=" User name"
-      
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+      required
             autoComplete='off'
           />
         </label>
@@ -38,6 +39,7 @@ export const RegisterForm = () => {
             name="email"
             placeholder=" Email"
             autoComplete='off'
+            required
           />
         </label>
         <label className={css.formLabel}>
@@ -45,8 +47,10 @@ export const RegisterForm = () => {
             className={css.formInput}
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="Password contain min 7 characters"
             autoComplete='off'
+            title='Password must contain min 7 characters'
+            required
           />
         </label>
         <button className={css.button} type="submit">

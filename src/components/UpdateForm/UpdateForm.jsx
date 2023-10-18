@@ -65,7 +65,7 @@ const UpdateForm=({onClose, contactId})=>{
              /></label>
              
               
-            <button className={css.modalSubmitBtn} type="submit" onClick={handleClose} >
+            <button className={css.modalSubmitBtn} type="submit"  >
               Edit
             </button>
           </form>

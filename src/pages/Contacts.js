@@ -18,18 +18,8 @@ export default function Contacts() {
   return (
     <div
       className={css.section}
-      // style={{
-      //   display: 'flex',
-      //   flexDirection: 'column',
-      //   alignItems: 'start',
-      //   backgroundColor: 'red',
-      //   justifyContent: 'center',
-      //   maxWidth: '900px',
-      // }}
     >
       <Form />
-    
-
       <title>Contacts</title>
       {isLoading && !error && <b>Loading...</b>}
       <ContactList />

@@ -3,7 +3,7 @@ import { sortByName, sortByAdded } from '../../redux/contact/contactSlice';
 
 import css from './sortedBtn.module.css';
 
-
+  import { TbAB2, Tb24Hours } from "react-icons/tb";
 const SortedBtns = () => {
   const dispatch = useDispatch();
     // const { sortedAlphabetic } = UseContact();
@@ -12,7 +12,8 @@ const SortedBtns = () => {
   return (
     <div>
       <button className={css.sortBtn} onClick={() => dispatch(sortByName())}>
-        Sorted by name
+        Sorted by   <TbAB2 />
+        
         {/* {sortedAlphabetic ? (
           <TbSortDescendingLetters size="20" />
         ) : (
@@ -20,7 +21,7 @@ const SortedBtns = () => {
         )} */}
       </button>
       <button className={css.sortBtn} onClick={() => dispatch(sortByAdded())}>
-        Sorted by date
+        Sorted by <Tb24Hours/>
       </button>
     </div>
   );

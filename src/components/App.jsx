@@ -1,5 +1,5 @@
 import { lazy, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import SharedLayout from '../components/SharedLayout/SharedLayout';
 import { useAuth } from 'hooks/ useAuth';
 import { refreshUser } from '../redux/auth/authOperation';
@@ -43,40 +43,10 @@ export const App = () => {
             <PrivateRoute redirectTo="/login" component={<Contacts />} />
           } />  
          
-        
+         <Route path="*" element={<Navigate to="/" />} />
       </Route>
+     
     </Routes>
   );
 };
 
-// return isRefreshing ? (
-//   <b> Refreshing...</b>
-// ) : (
-//   <Routes>
-//     <Route path="/" element={<SharedLayout />} />
-//     <Route index element={<HomePage />} />
-//     <Route
-//       path="/register"
-//       element={
-//         <RestrictedRoute
-//           redirectTo="/contacts"
-//           component={<RegisterPage />}
-//         />
-//       }
-//     />
-
-//     <Route
-//       path="/login"
-//       element={
-//         <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
-//       }
-//     />
-//     <Route
-//       path="/contacts"
-//       element={
-//         <PrivateRoute redirectTo="/login" component={<ContactPage />} />
-//       }
-//     />
-
-//   </Routes>
-// );

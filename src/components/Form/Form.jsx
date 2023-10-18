@@ -63,12 +63,12 @@ const Form = () => {
           className={css.formInput}
           type="tel"
           name="number"
-          placeholder="+380"
+          placeholder="+38"
           value={number}
           onChange={handleChange}
           id={numberInputId}
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+          title="Format phone number 012-345-67-89"
           required
         />
       </label>
