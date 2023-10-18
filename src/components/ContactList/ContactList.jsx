@@ -17,7 +17,7 @@ const ContactList = () => {
   const handleDelete = id => {
     Confirm.show(
       'Notiflix Confirm',
-      'Do you delete this contact?',
+      'Do you want delete this contact?',
       'Yes',
       'No',
       () => {
