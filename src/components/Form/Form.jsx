@@ -67,8 +67,8 @@ const Form = () => {
           value={number}
           onChange={handleChange}
           id={numberInputId}
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
-          title="Format phone number 012-345-67-89"
+          pattern="[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}"
+          title="Format phone number 0123456789"
           required
         />
       </label>
