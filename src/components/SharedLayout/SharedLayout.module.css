@@ -1,6 +1,6 @@
 .sharedLayoutBar {
   border-radius: 8px;
-  outline: auto red;
+  /* outline: auto red; */
   margin: 0px auto;
   padding: 20px 20px;
 }
